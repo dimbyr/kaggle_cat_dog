@@ -12,13 +12,13 @@ from train_test_functions import train, test
 # =============================================================================
 
 train_data = cat_and_dog(
-    path = '../Pictures/dogs-vs-cats-redux-kernels-edition' 
+    path = '..' 
 )
 val_data = cat_and_dog(
-    path = '../Pictures/dogs-vs-cats-redux-kernels-edition',
+    path = '..',
     phase= 'val'
 )
-test_data = cat_and_dog(path = '../Pictures/dogs-vs-cats-redux-kernels-edition',
+test_data = cat_and_dog(path = '..',
                             phase= 'test')
 
 print(f'{len(train_data)} training, {len(val_data)} validation, and {len(test_data)} test data')
@@ -28,7 +28,7 @@ print(f'{len(train_data)} training, {len(val_data)} validation, and {len(test_da
 
 train_loader = torch.utils.data.DataLoader(
     train_data,
-    batch_size=8, shuffle=True)
+    batch_size=32, shuffle=True)
 
 test_loader = torch.utils.data.DataLoader(test_data,
      batch_size=1, shuffle=True)
